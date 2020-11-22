@@ -13,9 +13,17 @@ public class Player {
         return this.hand.size();
     }
 
-    public void addCard(Card card) {
+    public void addCard(Card card){
         this.hand.add(card);
         }
+
+    public int handTotal(){
+        int total = 0;
+        for(Card card : this.hand){
+            total += card.getValue();
+        }
+        return total;
+    }
 }
 
 

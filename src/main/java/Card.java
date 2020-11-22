@@ -27,4 +27,8 @@ public class Card {
 //    public void addCardToDeck(Card card) {
 //        this.deck
 //    }
+
+    public int getValue(){
+        return this.rank.getValue();
+    }
 }

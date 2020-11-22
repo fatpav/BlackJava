@@ -11,6 +11,7 @@ public class DeckTest {
     @Before
     public void before() {
         deck = new Deck();
+        player = new Player();
         }
 
     @Test
@@ -40,19 +41,21 @@ public class DeckTest {
 //        System.out.println(deck.getDeck());
     }
 
-    @Test
-    public void canRemoveCardFromDeck() {
-        deck.createDeck();
-        deck.removeCard(0);
-        assertEquals(51, deck.getDeckSize());
-        }
+//    @Test
+//    public void canRemoveCardFromDeck() {
+//        deck.createDeck();
+//        deck.removeCard(0);
+//        assertEquals(51, deck.getDeckSize());
+//        }
 
-//     @Test
-//     public void canDealCard() {
-//         deck.createDeck();
-//         deck.shuffleDeck();
-//         deck.dealCard();
-//         assertEquals(1, player.checkHand());
-//         assertEquals(51, deck.getDeckSize());
-//         }
+     @Test
+     public void canDealCard() {
+         Card card1 = new Card(SuitType.HEARTS, CardRank.QUEEN);
+         deck.createDeck();
+         deck.shuffleDeck();
+         deck.dealCard();
+         player.addCard(card1);
+         assertEquals(1, player.checkHand());
+         assertEquals(51, deck.getDeckSize());
+         }
 }

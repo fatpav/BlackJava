@@ -44,8 +44,8 @@ public class Deck {
         return this.deck;
     }
 
-    public void removeCard(int index) {
-        this.deck.remove(index);
+    public void dealCard() {
+        this.deck.remove(0);
     }
 
 //    public Card dealCard(){
